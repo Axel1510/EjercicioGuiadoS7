@@ -1,13 +1,24 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 void main() {
-  //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-  // to see how IntelliJ IDEA suggests fixing it.
-  IO.println(String.format("Hello and welcome!"));
+    Desarrollador desarrollador1 = new Desarrollador("D01", "Ana", "Backend", 20);
+    Desarrollador desarrollador2 = new Desarrollador("D02", "Luis", "Frontend", 15);
+    Desarrollador desarrollador3 = new Desarrollador("D03", "Sofía", "Pruebas", 10);
 
-  for (int i = 1; i <= 5; i++) {
-    //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-    // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-    IO.println("i = " + i);
-  }
+    Proyecto proyecto = new Proyecto("Sistema de ventas");
+
+    System.out.println(proyecto.mostrarEquipo());
+
+    proyecto.agregarDesarrollador(desarrollador1);
+    proyecto.agregarDesarrollador(desarrollador2);
+    proyecto.agregarDesarrollador(desarrollador3);
+    System.out.println(proyecto.mostrarEquipo());
+
+    Desarrollador encontrado = proyecto.buscarDesarrollador("D02");
+    System.out.println(encontrado.mostrarInformacion());
+
+    System.out.println(proyecto.buscarDesarrollador("D99"));
+
+    System.out.println(proyecto.eliminarDesarrollador("D02"));
+    System.out.println(proyecto.mostrarEquipo());
+
+    System.out.println(proyecto.calcularTotalHoras());
 }
